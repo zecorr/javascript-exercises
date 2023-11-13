@@ -39,35 +39,42 @@ const people = [
     "Auguste Rodin",
 ]
 
+
+
 // Filter
 // Array.prototype.filter()
+// Section 1
+// View in console.table()
   
+// Long form
 const usPeppers = peppers.filter(function(pepper){
     if (pepper.country === "United States"){
-        return true
+        return true // keep it
     }
 })
 
+// Shorter form // Show how to do multiple variables as well
 const ukPeppers = peppers.filter(pepper => {
     if (pepper.country === "United Kingdom"){
-        return true
+        return true // keep it
     }
 })
+// One line
+const trinidadPeppers = peppers.filter(trinidad => trinidad.country === "Trinidad") // keep it
+// One line
+const worldRecords = peppers.filter(records => records.worldRecord)
+// One line
+const oneMillionPlus = peppers.filter(spicy => spicy.minimumShu >= 1000000)
 
-const trinidadPeppers = peppers.filter(trinidadJabrones => {
-    if (trinidadJabrones.country === "Trinidad"){
-        return true
-    }
-})
+// Map
+// Array.prototype.map()
+// Section 2
+// Map takes in an array, does something with that array and then returns a NEW array but with the same length
+// It's like a factory machine that takes in raw material, stamp it, and kick out that item on the other end. 
+// Always returns the same amount of items that you give it.
 
-const worldRecords = peppers.filter(jabrone => {
-    if (jabrone.worldRecord){
-        return true
-    }
-})
+const description = peppers.map(pepper => `${pepper.country} has a pepper named ${pepper.name} that can get as hot as ${pepper.maximumShu} SHU's!`)
 
-const oneMillionPlus = peppers.filter(spicy =>{
-    if (spicy.minimumShu >= 1000000){
-        return true
-    }
-})
+// Sort
+// Array.prototype.sort()
+// Section 3
